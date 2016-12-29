@@ -57,29 +57,17 @@ echo -e "Target directory: ${TARGET_DIR}\n"
 
 ####### Pick and choose your favourite SFT types and times ########
 
-## MDC SFTs, for testing
-#H1TYPE='1_H1_1800SFT_fromCWINJ_TOT_SET2'
-#L1TYPE='1_L1_1800SFT_fromCWINJ_TOT_SET2'
 
 ########### S6 SFTs ##############################  
 #H1TYPE='1_H1_1800SFT_allS6VSR2VSR3'
 #L1TYPE='1_L1_1800SFT_allS6VSR2VSR3'
 
 ########## O1 SFTs ##############################  
-#H1TYPE='1_H1_1800SFT_O1'
-#L1TYPE='1_L1_1800SFT_O1'
 # First updated calibration of O1 SFTs
 H1TYPE='1_H1_1800SFT_O1_C01'
 L1TYPE='1_L1_1800SFT_O1_C01'
 
 ########## GPS start and stop times #############  
-#GPS0='931000000'
-#GPS1='972000000'
-#GPS0='951534120'
-#GPS1='971619922'
-#GPS0='954403520'
-#GPS1='971619922'
-
 # Encompassing all of O1 (112662360046 - 1136649617)
 GPS0='1126623600'
 GPS1='1136649700'
@@ -101,46 +89,13 @@ EOF
 
 ##################################################################
 ###### For LDG accounting purposes ###############################
-###### Enter your LIGO (albert.einstein) username ################
+###### Enter your LIGO  username ################
 ###### And check if dev/prod         #############################
 
-# OLD TAGS:
-#ACCOUNT_GROUP=ligo.dev.o1.cw.coherentsupnovrem
-#ACCOUNT_GROUP=ligo.prod.o1.cw.coherentsupnovrem
-# For ER7 Spotlight outlier work:
-#ACCOUNT_GROUP=ligo.prod.s6.cw.directedisolated.coherent
+ACCOUNT_GROUP=your.account.tag
 
-
-# Cas A only O1 tags:
-#ACCOUNT_GROUP=ligo.dev.o1.cw.directedisolated.coherent
-#ACCOUNT_GROUP=ligo.prod.o1.cw.directedisolated.coherent
-
-# All others, O1 tags:
-#ACCOUNT_GROUP=ligo.dev.o1.cw.directedisolatedother.coherent
-ACCOUNT_GROUP=ligo.prod.o1.cw.directedisolatedother.coherent
-
-
-
-#read -p 'For LDG accounting purposes, please enter your LIGO (albert.einstein) username: '
-#if [[ "${REPLY}" == *.* ]]; then
-#    ACCOUNT_USER=${REPLY}
-#else
-#   echo -e "\aInvalid username." 
-#   read -p "Please enter your albert.einstein username for LDG bean-counting purposes: "
-#   if [[ "${REPLY}" == *.* ]]; then
-#      ACCOUNT_USER=${REPLY}
-#   else
-#      echo -e "\aOK smart-ass, you obviously want to abort this script.\nAborting..."
-#      exit 74
-#   fi
-#fi
-
-if [ $USER == "ra" ]; then 
-   ACCOUNT_USER=ra.inta
-else
-   read -p 'For accounting purposes, please enter your albert.einstein LSC username: '
-   ACCOUNT_USER=${REPLY}
-fi
+read -p 'For accounting purposes, please enter your albert.einstein LSC username: '
+ACCOUNT_USER=${REPLY}
 
 echo "Using account username: ${ACCOUNT_USER}"
 
