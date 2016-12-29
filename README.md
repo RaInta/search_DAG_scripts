@@ -1,7 +1,7 @@
 # search_DAG_scripts
 Scripts to make end-to-end DAG for continuous gravitational wave searches
 
-The overarching script is set_up_search_DAG.sh. 
+The overarching script is [set_up_search_DAG.sh](set_up_search_DAG.sh). 
 
 This initializes a number of important variables and calls a host of other scripts (most of which unfortunately we don't have room for here).
 
